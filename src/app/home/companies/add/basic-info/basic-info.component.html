@@ -1,0 +1,98 @@
+<div class="container">
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="name">
+      <label for="Company Name" class="label">Company Name </label>
+      <input
+        type="text"
+        id="companyName"
+        name="companyName"
+        formControlName="companyName"
+        class="long-input"
+      />
+    </div>
+
+    <div class="name">
+      <label for="Industry" class="label">Industry</label>
+      <input
+        type="text"
+        id="industry"
+        name="industry"
+        formControlName="industry"
+        class="long-input align-item"
+      />
+    </div>
+
+    <div class="name">
+      <label for="email" class="label">Contact Info</label>
+      <div class="relative">
+        <input
+          type="phone"
+          id="phone"
+          name="phone"
+          formControlName="phone"
+          class="short-input"
+          placeholder="07********"
+        />
+        <img src="{{ images['phone'] }}" class="input-image" />
+        <div
+          *ngIf="reactiveForm.controls.phone.errors?.['phone'] && isSubmitted"
+          class="warning-message"
+        >
+          *phone is invalid.
+        </div>
+      </div>
+      <div class="relative">
+        <input
+          type="text"
+          id="email"
+          name="email"
+          formControlName="email"
+          class="short-input"
+        />
+        <img src="{{ images['email'] }}" class="input-image" />
+        <div
+          *ngIf="reactiveForm.controls.email.errors?.['email'] && isSubmitted"
+          class="warning-message"
+        >
+          *Email is invalid.
+        </div>
+      </div>
+    </div>
+    <div class="country-state-info">
+      <div class="name">
+        <label for="Country" class="label">Country</label>
+        <input
+          type="text"
+          class="form-control"
+          name="country"
+          formControlName="country"
+          class="short-input align-country-input"
+        />
+      </div>
+      <div class="name state">
+        <label for="state" class="label">State</label>
+        <input
+          type="text"
+          class="form-control"
+          name="state"
+          formControlName="state"
+          class="shorter-input"
+        />
+      </div>
+    </div>
+    <div class="file">
+      <label for="file-input" class="file-upload">
+        <div class="upload-box">
+          Upload Company Logo
+          <input
+            id="file-input"
+            type="file"
+            formControlName="file"
+            accept=".png, .jpg, .jpeg, .svg"
+          />
+        </div>
+      </label>
+    </div>
+    <button class="save">Save</button>
+  </form>
+</div>

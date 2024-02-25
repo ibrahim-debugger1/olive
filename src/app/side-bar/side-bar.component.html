@@ -1,0 +1,17 @@
+<div class="container">
+  <div *ngFor="let item of sideLinksArray" class="item-list">
+    <div class="item">
+      <div
+        *ngIf="item[1]['selected']"
+        [class.selected]="item[1]['selected']"
+      ></div>
+      <div class="text" [class.selected-text]="item[1]['selected']">
+        <a
+          [routerLink]="['/' + item[1]['path']]"
+          (click)="selectLink(item[0])"
+          >{{ item[0] }}</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

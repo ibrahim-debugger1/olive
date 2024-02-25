@@ -1,0 +1,38 @@
+.container {
+	align-items: center;
+	border-bottom: 0.03125rem solid var(--light-gray-shade);
+	display: flex;
+	height: 4.875rem;
+	justify-content: space-between;
+	padding: 1.5rem 2rem 1.5rem 3.125rem;
+}
+
+.down-arrow {
+	cursor: pointer;
+	height: 0.9rem;
+	width: 1.6rem;
+}
+
+.logo {
+	height: 1.806875rem;
+	width: 4.6875rem;
+}
+
+.personal_info {
+	align-items: center;
+	display: flex;
+}
+
+.profile_pic {
+	border-radius: 2rem;
+	cursor: pointer;
+	height: 2.7875rem;
+	width: 2.7875rem;
+}
+
+.username {
+	cursor: pointer;
+	font-weight: bold;
+	height: 1.0625rem;
+	width: fit-content;
+}

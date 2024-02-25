@@ -1,0 +1,10 @@
+<div class="container">
+  <a [routerLink]="['/home']" (click)="goHome()">
+    <img src="{{ images['logo'] }}" class="logo" />
+  </a>
+  <div *ngIf="logedIn" class="personal_info">
+    <div class="username">{{ username }}</div>
+    <img src="{{ images['down_arrow'] }}" class="down-arrow"/>
+    <img class="profile_pic" src="{{ images['profile_pic'] }}" />
+  </div>
+</div>

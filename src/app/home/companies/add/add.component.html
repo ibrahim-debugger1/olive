@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="title">
+    <div class="companies">Companies</div>
+    <img src="{{ images['right_arrow'] }}" class="arrow" />
+    <div class="add-new">Add New</div>
+  </div>
+  <div class="nav">
+    <div
+      *ngFor="let nav of navLinksArray"
+      class="nav-item"
+      >
+      <a
+      [routerLink]="['/' + nav[1]['path']]"
+      (click)="selectLink(nav[0])"
+      [class.selected]="nav[1]['selected']"
+      >{{ nav[1]["name"] }}</a
+    >
+    <div [class.selected-line]="nav[1]['selected']"></div>
+    </div>
+  </div>
+  <div class="horizental-line"></div>
+  <router-outlet></router-outlet>
+</div>

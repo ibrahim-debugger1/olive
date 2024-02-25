@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="companies-header">
+    <div class="title">Companies</div>
+    <button (click)="add()">Add New +</button>
+  </div>
+  <div class="input-elements">
+    <input type="text" placeholder="Search" class="search" />
+    <img src="{{ images['search'] }}" class="search-image" />
+    <img src="{{ images['filter_bars'] }}" class="filter-bars" />
+    <img src="{{ images['filter'] }}" class="filter" />
+    <img src="{{ images['down_arrow'] }}" class="down-arrow" />
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Country</th>
+        <th>Status</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of countries_list">
+        <td class="date">{{ item.Date }}</td>
+        <td>{{ item.name }}</td>
+        <td class="lighter-font">{{ item.type }}</td>
+        <td class="lighter-font">{{ item.country }}</td>
+        <td
+          [class.active]="item.status === 'Active'"
+          [class.inactive]="item.status === 'Inactive'"
+        >
+          <div class="status-container">
+            <div class="dot"></div>
+            {{ item.status }}
+          </div>
+        </td>
+        <td>
+          <img src="{{ images['edit'] }}" class="edit"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <div class="page"></div>
+    <div class="page"></div>
+    <div class="page"></div>
+  </div>
+</div>
